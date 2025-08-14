@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/HP/Downloads/BrakeFailure_DeployReady_v2/mlruns/221111223779155068/05acdeff093d4bf99763ca2f478ef405/artifacts
+end_time: 1755192238861
+entry_point_name: ''
+experiment_id: '221111223779155068'
+lifecycle_stage: active
+run_id: 05acdeff093d4bf99763ca2f478ef405
+run_name: colorful-doe-697
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1755192229691
+status: 3
+tags: []
+user_id: HP

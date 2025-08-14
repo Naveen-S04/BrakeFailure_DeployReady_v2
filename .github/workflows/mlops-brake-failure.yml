@@ -37,25 +37,29 @@ jobs:
         echo "S3_BUCKET_NAME=${{ secrets.S3_BUCKET_NAME }}" >> $GITHUB_ENV
 
     - name: Train Model
-      run: |
-        python train_model.py
+      run: python train_model.py
 
-    - name: Deploy to EC2
-      uses: appleboy/scp-action@v0.1.7
+    - name: Deploy & Restart App on EC2
+      uses: appleboy/ssh-action@v1.0.0
       with:
         host: ${{ secrets.EC2_HOST }}
         username: ec2-user
-        key: ${{ secrets.EC2_KEY }}
-        source: "."
-        target: "~/brake-failure-app"
-
-    - name: Restart App on EC2
-      uses: appleboy/ssh-action@v0.1.10
-      with:
-        host: ${{ secrets.EC2_HOST }}
-        username: ec2-user
-        key: ${{ secrets.EC2_KEY }}
+        key: ${{ secrets.EC2_PEM_KEY }}
         script: |
-          cd ~/brake-failure-app
-          docker-compose down || true
-          docker-compose up -d --build
+          # Clone or update repo
+          if [ ! -d "BrakeFailure_DeployReady_v2" ]; then
+            git clone https://github.com/Naveen-S04/BrakeFailure_DeployReady_v2 .git BrakeFailure_DeployReady_v2
+          else
+            cd BrakeFailure_DeployReady_v2 && git pull
+          fi
+
+          cd BrakeFailure_DeployReady_v2
+
+          # Install dependencies
+          pip3 install -r requirements.txt
+
+          # Kill any existing gunicorn process
+          pkill -f gunicorn || true
+
+          # Start gunicorn on port 5000
+          nohup gunicorn --bind 0.0.0.0:5000 app:app > app.log 2>&1 &
