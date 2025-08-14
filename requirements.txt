@@ -1,5 +1,5 @@
+mlflow
+boto3
 pandas
 scikit-learn
-mlflow
-flask
 numpy
