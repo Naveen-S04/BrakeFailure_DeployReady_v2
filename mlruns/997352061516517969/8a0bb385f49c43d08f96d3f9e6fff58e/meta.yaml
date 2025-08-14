@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/HP/Desktop/Break_Failure/mlruns/997352061516517969/8a0bb385f49c43d08f96d3f9e6fff58e/artifacts
+end_time: 1753743269319
+entry_point_name: ''
+experiment_id: '997352061516517969'
+lifecycle_stage: active
+run_id: 8a0bb385f49c43d08f96d3f9e6fff58e
+run_name: nebulous-owl-907
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753743261452
+status: 3
+tags: []
+user_id: HP

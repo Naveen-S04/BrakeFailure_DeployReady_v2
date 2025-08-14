@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/HP/Desktop/Break_Failure/mlruns/997352061516517969/e06d679a029c419fb69aafff9a75380a/artifacts
+end_time: 1753744434642
+entry_point_name: ''
+experiment_id: '997352061516517969'
+lifecycle_stage: active
+run_id: e06d679a029c419fb69aafff9a75380a
+run_name: suave-swan-30
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753744426578
+status: 3
+tags: []
+user_id: HP

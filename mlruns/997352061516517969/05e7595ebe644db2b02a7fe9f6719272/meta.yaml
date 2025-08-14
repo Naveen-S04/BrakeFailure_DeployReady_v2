@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/HP/Desktop/Break_Failure/mlruns/997352061516517969/05e7595ebe644db2b02a7fe9f6719272/artifacts
+end_time: 1753759965919
+entry_point_name: ''
+experiment_id: '997352061516517969'
+lifecycle_stage: active
+run_id: 05e7595ebe644db2b02a7fe9f6719272
+run_name: gregarious-gnat-711
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753759945524
+status: 3
+tags: []
+user_id: HP

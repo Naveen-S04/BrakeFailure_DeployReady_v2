@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v2.14.1
+    container_name: mlflow-server
+    command: >
+      mlflow server
+      --backend-store-uri sqlite:///mlflow.db
+      --default-artifact-root /mlflow/artifacts
+      --host 0.0.0.0
+      --port 5000
+    volumes:
+      - ./_local_mlflow:/mlflow
+    ports:
+      - "5000:5000"
+
+  api:
+    build: .
+    container_name: brake-failure-api
+    depends_on:
+      - mlflow
+    environment:
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+      # Use your registry model URI in prod; for local we can use run_id.txt after training:
+      # - MODEL_URI=runs:/<run_id>/model
+    ports:
+      - "8080:5000"
+    command: ["gunicorn", "-w", "2", "-b", "0.0.0.0:5000", "app:app"]

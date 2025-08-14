@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/HP/Desktop/Break_Failure/mlruns/997352061516517969/5d3de61a745646fdb28fd67e2ab0cea8/artifacts
+end_time: 1753760500386
+entry_point_name: ''
+experiment_id: '997352061516517969'
+lifecycle_stage: active
+run_id: 5d3de61a745646fdb28fd67e2ab0cea8
+run_name: classy-kite-440
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753760482025
+status: 3
+tags: []
+user_id: HP

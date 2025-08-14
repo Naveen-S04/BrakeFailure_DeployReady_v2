@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/HP/Desktop/Break_Failure/mlruns/997352061516517969/4444adb2335c4f55ba79d12255e3b5f1/artifacts
+end_time: 1753746113729
+entry_point_name: ''
+experiment_id: '997352061516517969'
+lifecycle_stage: active
+run_id: 4444adb2335c4f55ba79d12255e3b5f1
+run_name: bouncy-midge-849
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753746105025
+status: 3
+tags: []
+user_id: HP

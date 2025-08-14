@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/HP/Desktop/Break_Failure/mlruns/997352061516517969/1786291abd594e20b23f71dee3e41a78/artifacts
+end_time: 1755179088179
+entry_point_name: ''
+experiment_id: '997352061516517969'
+lifecycle_stage: active
+run_id: 1786291abd594e20b23f71dee3e41a78
+run_name: redolent-ray-972
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1755179081934
+status: 3
+tags: []
+user_id: HP

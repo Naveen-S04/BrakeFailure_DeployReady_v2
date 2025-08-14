@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/HP/Desktop/Break_Failure/mlruns/997352061516517969/297d2454afc840739e0171098c207563/artifacts
+end_time: 1753743995239
+entry_point_name: ''
+experiment_id: '997352061516517969'
+lifecycle_stage: active
+run_id: 297d2454afc840739e0171098c207563
+run_name: receptive-whale-268
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753743986463
+status: 3
+tags: []
+user_id: HP

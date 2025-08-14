@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/HP/Desktop/Break_Failure/mlruns/997352061516517969/5ab1722a19eb472e9a66ff1f65084625/artifacts
+end_time: 1753758248717
+entry_point_name: ''
+experiment_id: '997352061516517969'
+lifecycle_stage: active
+run_id: 5ab1722a19eb472e9a66ff1f65084625
+run_name: glamorous-gnat-257
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753758233436
+status: 3
+tags: []
+user_id: HP

@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/HP/Desktop/Break_Failure/mlruns/997352061516517969/8ba65a0231ed4b26b29c1cc504e06eba/artifacts
+end_time: 1753742945042
+entry_point_name: ''
+experiment_id: '997352061516517969'
+lifecycle_stage: active
+run_id: 8ba65a0231ed4b26b29c1cc504e06eba
+run_name: clumsy-fawn-35
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753742934662
+status: 3
+tags: []
+user_id: HP

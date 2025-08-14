@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/HP/Desktop/Break_Failure/mlruns/997352061516517969/f1c9f6835fbb46c08842ea8673842db5/artifacts
+end_time: 1753756827048
+entry_point_name: ''
+experiment_id: '997352061516517969'
+lifecycle_stage: active
+run_id: f1c9f6835fbb46c08842ea8673842db5
+run_name: judicious-loon-358
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753756817643
+status: 3
+tags: []
+user_id: HP

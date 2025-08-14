@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/HP/Desktop/Break_Failure/mlruns/997352061516517969/a4390b5e082343b383f750dec108cf63/artifacts
+end_time: 1753744042915
+entry_point_name: ''
+experiment_id: '997352061516517969'
+lifecycle_stage: active
+run_id: a4390b5e082343b383f750dec108cf63
+run_name: grandiose-ram-665
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753744034199
+status: 3
+tags: []
+user_id: HP

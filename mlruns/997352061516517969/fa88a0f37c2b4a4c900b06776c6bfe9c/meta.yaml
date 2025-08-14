@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/HP/Desktop/Break_Failure/mlruns/997352061516517969/fa88a0f37c2b4a4c900b06776c6bfe9c/artifacts
+end_time: 1753759905451
+entry_point_name: ''
+experiment_id: '997352061516517969'
+lifecycle_stage: active
+run_id: fa88a0f37c2b4a4c900b06776c6bfe9c
+run_name: learned-boar-788
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753759889301
+status: 3
+tags: []
+user_id: HP

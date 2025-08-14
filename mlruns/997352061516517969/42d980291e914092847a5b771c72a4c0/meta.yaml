@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/HP/Desktop/Break_Failure/mlruns/997352061516517969/42d980291e914092847a5b771c72a4c0/artifacts
+end_time: 1753743282683
+entry_point_name: ''
+experiment_id: '997352061516517969'
+lifecycle_stage: active
+run_id: 42d980291e914092847a5b771c72a4c0
+run_name: amazing-whale-503
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753743275154
+status: 3
+tags: []
+user_id: HP

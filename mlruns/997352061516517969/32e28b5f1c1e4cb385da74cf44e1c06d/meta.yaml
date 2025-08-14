@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/HP/Desktop/Break_Failure/mlruns/997352061516517969/32e28b5f1c1e4cb385da74cf44e1c06d/artifacts
+end_time: 1755178955287
+entry_point_name: ''
+experiment_id: '997352061516517969'
+lifecycle_stage: active
+run_id: 32e28b5f1c1e4cb385da74cf44e1c06d
+run_name: silent-pug-991
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1755178948287
+status: 3
+tags: []
+user_id: HP

@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/HP/Desktop/Break_Failure/mlruns/997352061516517969/0295a9dc255445bc96ce9b97c6ffecbf/artifacts
+end_time: 1755184345532
+entry_point_name: ''
+experiment_id: '997352061516517969'
+lifecycle_stage: active
+run_id: 0295a9dc255445bc96ce9b97c6ffecbf
+run_name: receptive-gnu-47
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1755184323734
+status: 3
+tags: []
+user_id: HP

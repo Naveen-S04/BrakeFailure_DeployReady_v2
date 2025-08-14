@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/HP/Desktop/Break_Failure/mlruns/997352061516517969/31a0364e6ea14456b2081c8cdb79f202/artifacts
+end_time: 1753742993346
+entry_point_name: ''
+experiment_id: '997352061516517969'
+lifecycle_stage: active
+run_id: 31a0364e6ea14456b2081c8cdb79f202
+run_name: luminous-foal-798
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753742988021
+status: 4
+tags: []
+user_id: HP

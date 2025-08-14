@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/HP/Desktop/Break_Failure/mlruns/997352061516517969/241a83b45fe7489ab50192db6078abff/artifacts
+end_time: 1753742957317
+entry_point_name: ''
+experiment_id: '997352061516517969'
+lifecycle_stage: active
+run_id: 241a83b45fe7489ab50192db6078abff
+run_name: capricious-panda-841
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753742950533
+status: 3
+tags: []
+user_id: HP

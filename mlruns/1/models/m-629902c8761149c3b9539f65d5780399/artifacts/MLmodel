@@ -1,0 +1,22 @@
+artifact_path: file:C:/Users/HP/Downloads/BrakeFailure_DeployReady_v2/mlruns/1/models/m-629902c8761149c3b9539f65d5780399/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.2
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.1
+mlflow_version: 3.2.0
+model_id: m-629902c8761149c3b9539f65d5780399
+model_size_bytes: 897
+model_uuid: m-629902c8761149c3b9539f65d5780399
+prompts: null
+run_id: 2308610b581b416aae83ea70b4f7f2bf
+utc_time_created: '2025-08-14 13:52:47.226134'

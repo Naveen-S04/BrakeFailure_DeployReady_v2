@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/HP/Desktop/Break_Failure/mlruns/997352061516517969/29800fa9dbb541f585b063d74a54340c/artifacts
+end_time: 1753745842635
+entry_point_name: ''
+experiment_id: '997352061516517969'
+lifecycle_stage: active
+run_id: 29800fa9dbb541f585b063d74a54340c
+run_name: gentle-yak-673
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753745834941
+status: 3
+tags: []
+user_id: HP

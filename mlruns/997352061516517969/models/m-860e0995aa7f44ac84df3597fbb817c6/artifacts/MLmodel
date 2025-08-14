@@ -1,0 +1,22 @@
+artifact_path: file:///C:/Users/HP/Desktop/Break_Failure/mlruns/997352061516517969/models/m-860e0995aa7f44ac84df3597fbb817c6/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.2
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.1
+mlflow_version: 3.1.4
+model_id: m-860e0995aa7f44ac84df3597fbb817c6
+model_size_bytes: 897
+model_uuid: m-860e0995aa7f44ac84df3597fbb817c6
+prompts: null
+run_id: a4390b5e082343b383f750dec108cf63
+utc_time_created: '2025-07-28 23:07:14.428056'

@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/HP/Desktop/Break_Failure/mlruns/997352061516517969/904e1c8968a74dd9892229ec2375dc0d/artifacts
+end_time: 1755179100239
+entry_point_name: ''
+experiment_id: '997352061516517969'
+lifecycle_stage: active
+run_id: 904e1c8968a74dd9892229ec2375dc0d
+run_name: mercurial-seal-0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1755179093393
+status: 3
+tags: []
+user_id: HP

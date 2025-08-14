@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/HP/Desktop/Break_Failure/mlruns/997352061516517969/models/m-8483f02c77a24055a7b182ca98858eef/artifacts
+creation_timestamp: 1753744426737
+experiment_id: '997352061516517969'
+last_updated_timestamp: 1753744434623
+model_id: m-8483f02c77a24055a7b182ca98858eef
+model_type: null
+name: model
+source_run_id: e06d679a029c419fb69aafff9a75380a
+status: 2
+status_message: null

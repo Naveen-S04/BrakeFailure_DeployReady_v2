@@ -1,0 +1,91 @@
+name: Brake Failure MLOps CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-train-deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      AWS_REGION: ap-south-1
+      ECR_REPO: brake-failure-api
+      MLFLOW_TRACKING_URI: ${{ secrets.MLFLOW_TRACKING_URI }}
+      MODEL_REGISTRY_URI: ${{ secrets.MODEL_REGISTRY_URI }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.10"
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Train & log with MLflow
+      env:
+        MLFLOW_TRACKING_URI: ${{ env.MLFLOW_TRACKING_URI }}
+      run: |
+        python train_model.py
+        echo "Training finished."
+
+    - name: Capture run_id (if present)
+      id: runid
+      run: |
+        if [ -f model/run_id.txt ]; then
+          RUNID=$(cat model/run_id.txt | tr -d '\n')
+          echo "run_id=$RUNID" >> $GITHUB_OUTPUT
+        else
+          echo "run_id=" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ env.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ env.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+
+    - name: Log in to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v2
+
+    - name: Build, tag, and push image to ECR
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        IMAGE_TAG: ${{ steps.runid.outputs.run_id || 'latest' }}
+      run: |
+        docker build -t $ECR_REPO:$IMAGE_TAG .
+        docker tag $ECR_REPO:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPO:$IMAGE_TAG
+        docker push $ECR_REGISTRY/$ECR_REPO:$IMAGE_TAG
+
+    - name: Deploy to EC2 over SSH
+      uses: appleboy/ssh-action@v1.2.0
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USER }}
+        key: ${{ secrets.EC2_SSH_KEY }}
+        script_stop: true
+        script: |
+          ECR_REGISTRY=${{ steps.login-ecr.outputs.registry }}
+          IMAGE_TAG=${{ steps.runid.outputs.run_id || 'latest' }}
+          ECR_REPO=${{ env.ECR_REPO }}
+          MLURI=${{ env.MLFLOW_TRACKING_URI }}
+          MODEL_URI=${{ env.MODEL_REGISTRY_URI }}
+          docker login -u AWS -p $(aws ecr get-login-password --region ${{ env.AWS_REGION }}) $ECR_REGISTRY
+          docker pull $ECR_REGISTRY/$ECR_REPO:$IMAGE_TAG
+          docker stop brake-failure-api || true
+          docker rm brake-failure-api || true
+          docker run -d --name brake-failure-api -p 80:5000 \
+            -e MLFLOW_TRACKING_URI="$MLURI" \
+            -e MODEL_URI="$MODEL_URI" \
+            $ECR_REGISTRY/$ECR_REPO:$IMAGE_TAG

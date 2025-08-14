@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/HP/Desktop/Break_Failure/mlruns/997352061516517969/1878bf794b5d4de88ca1cdcb388aa154/artifacts
+end_time: 1753746306331
+entry_point_name: ''
+experiment_id: '997352061516517969'
+lifecycle_stage: active
+run_id: 1878bf794b5d4de88ca1cdcb388aa154
+run_name: thundering-mare-300
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753746298996
+status: 3
+tags: []
+user_id: HP

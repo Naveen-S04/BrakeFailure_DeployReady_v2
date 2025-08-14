@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/HP/Desktop/Break_Failure/mlruns/997352061516517969/62370bc0cdfd4e5cb52e154be58db115/artifacts
+end_time: 1753745829363
+entry_point_name: ''
+experiment_id: '997352061516517969'
+lifecycle_stage: active
+run_id: 62370bc0cdfd4e5cb52e154be58db115
+run_name: defiant-ox-827
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753745820720
+status: 3
+tags: []
+user_id: HP

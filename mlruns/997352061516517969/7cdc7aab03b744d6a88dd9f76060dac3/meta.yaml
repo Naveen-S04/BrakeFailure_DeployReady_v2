@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/HP/Desktop/Break_Failure/mlruns/997352061516517969/7cdc7aab03b744d6a88dd9f76060dac3/artifacts
+end_time: 1753744475285
+entry_point_name: ''
+experiment_id: '997352061516517969'
+lifecycle_stage: active
+run_id: 7cdc7aab03b744d6a88dd9f76060dac3
+run_name: bald-foal-913
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753744468431
+status: 3
+tags: []
+user_id: HP
