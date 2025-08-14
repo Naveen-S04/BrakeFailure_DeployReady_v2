@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/HP/Downloads/BrakeFailure_DeployReady_v2/mlruns/221111223779155068/models/m-ab0d95bc295f431f8df261fb2a9bba88/artifacts
+creation_timestamp: 1755193280371
+experiment_id: '221111223779155068'
+last_updated_timestamp: 1755193289567
+model_id: m-ab0d95bc295f431f8df261fb2a9bba88
+model_type: null
+name: BrakeFailureModel
+source_run_id: 193c596b93f44235a2d64dabf660bafa
+status: 2
+status_message: null

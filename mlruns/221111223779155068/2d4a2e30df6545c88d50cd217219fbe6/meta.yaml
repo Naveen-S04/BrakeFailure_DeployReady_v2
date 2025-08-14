@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/HP/Downloads/BrakeFailure_DeployReady_v2/mlruns/221111223779155068/2d4a2e30df6545c88d50cd217219fbe6/artifacts
+end_time: 1755193255822
+entry_point_name: ''
+experiment_id: '221111223779155068'
+lifecycle_stage: active
+run_id: 2d4a2e30df6545c88d50cd217219fbe6
+run_name: gaudy-seal-710
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1755193254396
+status: 4
+tags: []
+user_id: HP

@@ -10,56 +10,80 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v3
+      # -----------------------
+      # 1. Checkout Code
+      # -----------------------
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
+      # -----------------------
+      # 2. Set up Python
+      # -----------------------
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      # -----------------------
+      # 3. Install dependencies
+      # -----------------------
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-    - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v2
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: ${{ secrets.AWS_REGION }}
+      # -----------------------
+      # 4. Configure AWS Credentials
+      # -----------------------
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
 
-    - name: Set Environment Variables
-      run: |
-        echo "MLFLOW_TRACKING_URI=${{ secrets.MLFLOW_TRACKING_URI }}" >> $GITHUB_ENV
-        echo "MLFLOW_S3_ENDPOINT_URL=${{ secrets.MLFLOW_S3_ENDPOINT_URL }}" >> $GITHUB_ENV
-        echo "S3_BUCKET_NAME=${{ secrets.S3_BUCKET_NAME }}" >> $GITHUB_ENV
+      # -----------------------
+      # 5. Set Environment Variables
+      # -----------------------
+      - name: Set Environment Variables
+        run: |
+          echo "MLFLOW_TRACKING_URI=${{ secrets.MLFLOW_TRACKING_URI }}" >> $GITHUB_ENV
+          echo "MLFLOW_S3_ENDPOINT_URL=${{ secrets.MLFLOW_S3_ENDPOINT_URL }}" >> $GITHUB_ENV
+          echo "S3_BUCKET_NAME=${{ secrets.S3_BUCKET_NAME }}" >> $GITHUB_ENV
 
-    - name: Train Model
-      run: python train_model.py
+      # -----------------------
+      # 6. Train Model
+      # -----------------------
+      - name: Train Model
+        run: python train_model.py
 
-    - name: Deploy & Restart App on EC2
-      uses: appleboy/ssh-action@v1.0.0
-      with:
-        host: ${{ secrets.EC2_HOST }}
-        username: ec2-user
-        key: ${{ secrets.EC2_PEM_KEY }}
-        script: |
-          # Clone or update repo
-          if [ ! -d "BrakeFailure_DeployReady_v2" ]; then
-            git clone https://github.com/Naveen-S04/BrakeFailure_DeployReady_v2 .git BrakeFailure_DeployReady_v2
-          else
-            cd BrakeFailure_DeployReady_v2 && git pull
-          fi
+      # -----------------------
+      # 7. Deploy & Restart App on EC2
+      # -----------------------
+      - name: Deploy & Restart App on EC2
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ec2-user
+          key: ${{ secrets.EC2_PEM_KEY }}
+          script: |
+            # Clone or update repo
+            if [ ! -d "BrakeFailure_DeployReady_v2" ]; then
+              git clone https://github.com/Naveen-S04/BrakeFailure_DeployReady_v2.git BrakeFailure_DeployReady_v2
+            else
+              cd BrakeFailure_DeployReady_v2 && git pull
+            fi
 
-          cd BrakeFailure_DeployReady_v2
+            cd BrakeFailure_DeployReady_v2
 
-          # Install dependencies
-          pip3 install -r requirements.txt
+            # Upgrade pip and install dependencies
+            pip3 install --upgrade pip
+            pip3 install -r requirements.txt
 
-          # Kill any existing gunicorn process
-          pkill -f gunicorn || true
+            # Kill any existing Gunicorn process
+            pkill -f gunicorn || true
 
-          # Start gunicorn on port 5000
-          nohup gunicorn --bind 0.0.0.0:5000 app:app > app.log 2>&1 &
+            # Start Gunicorn with 3 workers
+            nohup gunicorn --workers 3 --bind 0.0.0.0:5000 app:app > app.log 2>&1 &
+            sleep 5
+            tail -n 20 app.log

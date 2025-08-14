@@ -1,0 +1,36 @@
+artifact_path: file:///C:/Users/HP/Downloads/BrakeFailure_DeployReady_v2/mlruns/221111223779155068/models/m-ab0d95bc295f431f8df261fb2a9bba88/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.2
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.1
+is_signature_from_type_hint: false
+mlflow_version: 3.1.4
+model_id: m-ab0d95bc295f431f8df261fb2a9bba88
+model_size_bytes: 2203
+model_uuid: m-ab0d95bc295f431f8df261fb2a9bba88
+prompts: null
+run_id: 193c596b93f44235a2d64dabf660bafa
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  serving_input_path: serving_input_example.json
+  type: dataframe
+signature:
+  inputs: '[{"type": "double", "name": "brake_pressure", "required": true}, {"type":
+    "double", "name": "brake_temp", "required": true}, {"type": "double", "name":
+    "vehicle_speed", "required": true}, {"type": "double", "name": "pad_wear_level",
+    "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-08-14 17:41:20.447795'
